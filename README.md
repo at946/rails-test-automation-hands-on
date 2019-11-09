@@ -1,24 +1,35 @@
 # README
+このRails on Dockerアプリケーションは[【Rails】こわくないからこっちにおいで！TDD/BDDでテスト自動化ことはじめ。](https://app-4q4t.herokuapp.com)で使ってもらうためのものです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+alpine linuxベースのRailsコンテナ、PostgreSQLコンテナで構成されています。
 
-Things you may want to cover:
+あらかじめ、Selenium-Webdriver、RSpec、Capybaraなどの初期設定がされているので、テストコードを書けばRSpecのSystem testが実行できる状態になっています。
+アプリは空の状態なので、Hello Railsページが出るだけです。
 
-* Ruby version
+# Usage（ハンズオン前の確認事項）
+まずはこのレポジトリをローカルにクローンしてください。
 
-* System dependencies
+```
+$ git clone git@github.com:at946/rails-test-automation-hands-on.git
+```
 
-* Configuration
+まずDocker imageをビルドし環境の初期構築をします。
 
-* Database creation
+```
+$ cd rails-test-automation-hands-on
+$ docker-compose build
+$ docker-compose run --rm web yarn install --check-files
+$ docker-compose run --rm web rails db:create
+```
 
-* Database initialization
+一度コンテナが正常に起動するかを確認しておきます。
 
-* How to run the test suite
+```
+$ docker-compose up -d
+```
+少し時間がかかりますが、`http://localhost:3000`にブラウザからアクセスして"Yay! You’re on Rails!"というメッセージのHello Railsページが表示されます。
+確認したらコンテナを落としておきます。
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ docker-compose down
+```
