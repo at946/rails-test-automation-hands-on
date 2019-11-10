@@ -18,8 +18,9 @@ $ git clone git@github.com:at946/rails-test-automation-hands-on.git
 ```
 $ cd rails-test-automation-hands-on
 $ docker-compose build
-$ docker-compose run --rm web yarn install --check-files
-$ docker-compose run --rm web rails db:create
+$ docker-compose run web yarn install --check-files
+$ docker-compose run web rails db:create
+$ mkdir spec/system
 ```
 
 一度コンテナが正常に起動するかを確認しておきます。
