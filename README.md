@@ -1,5 +1,5 @@
 # README
-このRails on Dockerアプリケーションは[【Rails】こわくないからこっちにおいで！TDD/BDDでテスト自動化ことはじめ。](https://app-4q4t.herokuapp.com)で使ってもらうためのものです。
+このRails on Dockerアプリケーションは[【Rails】こわくないからこっちにおいで！TDD/BDDでテスト自動化ことはじめ。](https://qiita.com/at-946/items/45438562042e3b2643e7)で使ってもらうためのものです。
 
 alpine linuxベースのRailsコンテナ、PostgreSQLコンテナで構成されています。
 
